@@ -26,7 +26,7 @@ http://robertoguiotto.github.io/frontend-nanodegree-arcade-game/
 
 Gameplay
 ========
-The player controls a character which starts at the bottom of the screen. The aim of the player is to successfully guide the character toward the top of the screen, avoiding any concact with the enemies that are running horizontally in three different rows. If the player gets hit from one of the enemies, an alert appears on screen, and the player is forced to restrart from the bottom. If the player successfully reach the top of the screen, a "win" alert is displayed on screen, and the game restarts.
+The player controls a character which starts at the bottom of the screen. The aim of the player is to successfully guide the character toward the top of the screen, avoiding any concact with the enemies that are running horizontally in three different rows. If the player gets hit from one of the enemies, an alert appears on screen, and the player is forced to restart from the bottom. If the player successfully reach the top of the screen, a "win" alert is displayed on screen, and the game restarts.
 
 
 Instructions
