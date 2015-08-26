@@ -69,7 +69,7 @@ var Player = function() {
             this.x = 0;
         } else if (this.y > 400) {
             this.y = 400;
-        } else if (this.y < -18) {
+        } else if (this.y < 32) {
             alert('You win! ;)');
             this.y = 400;
             console.log('Game completion detected.')
