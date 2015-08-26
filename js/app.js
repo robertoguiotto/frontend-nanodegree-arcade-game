@@ -1,3 +1,5 @@
+
+
 // Enemies our player must avoid
 var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
@@ -5,6 +7,7 @@ var Enemy = function(x, y) {
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
+    'use strict';
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
@@ -22,7 +25,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-
+    'use strict';
     if (this.x > 500){
         //moving enemies back to the left when they exit the screen, with random position
         this.x= Math.floor(Math.random() * (-500 + 50)) -500;
@@ -33,6 +36,7 @@ Enemy.prototype.update = function(dt) {
 
 Enemy.prototype.getBugSpeed = function(){
     //Gives one of three random speeds to objects
+    'use strict';
     var bugSpeed = Math.floor(Math.random() * (10 - 1)) + 1;
     if (Math.floor(bugSpeed) > 8 && Math.floor(bugSpeed) <= 10) {
         return 700;
@@ -52,6 +56,7 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function() {
+    'use strict';
     this.sprite = 'images/char-boy.png';
     this.x = playerStartPositionX;
     this.y = playerStartPositionY;
@@ -72,8 +77,8 @@ var Player = function() {
         } else if (this.y < 32) {
             alert('You win! ;)');
             this.y = 400;
-            console.log('Game completion detected.')
-        };
+            console.log('Game completion detected.');
+        }
     };
 
     // Make player move only inside the squares
@@ -91,7 +96,7 @@ var Player = function() {
             case 'down': this.y = this.y + 82;
             console.log('Moved down.');
             break;
-        };
+        }
     };
 };
 
@@ -125,18 +130,19 @@ document.addEventListener('keyup', function(e) {
 
 // Adds collision control
 function checkCollisions () {
+    'use strict';
     allEnemies.forEach(function(enemy) {
         if (enemy.x < player.x + 50 && enemy.x + 68 > player.x && enemy.y < player.y + 50 && enemy.y + 68 > player.y) {
             console.log('Collision detected.');
             player.y = playerStartPositionY;
             alert('You have been hit.  :(');
         }
-    })
-};
+    });
+}
 
 // Push enemies into the Array, passing x & y position parameters.
 // Y parameters are set to fit the enemies into the 3-row square schema
 var allEnemies = [];
 for (var i = 0; i < 3; i++) {
-    allEnemies.push(new Enemy(-60, 60 + 85 * i))
-};
+    allEnemies.push(new Enemy(-60, 60 + 85 * i));
+}
